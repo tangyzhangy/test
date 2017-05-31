@@ -2,7 +2,7 @@
  "related_applications" : [{
   "platform" : "play", 
   "id" : "com.bobpay.app",
-  min_version" : "1",
+  "min_version" : "1",
   "fingerprints" : [{
  "play" 
   "com.bobpay.app" 
