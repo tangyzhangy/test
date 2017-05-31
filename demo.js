@@ -23,7 +23,7 @@ const bobPayPaymentMethod = {
 };
 
 const supportedInstruments = [
-  creditCardPaymentMethod, bobPayPaymentMethod
+  bobPayPaymentMethod
 ];
 
 function initPaymentRequest() {
