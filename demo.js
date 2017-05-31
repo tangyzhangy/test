@@ -14,6 +14,24 @@ const creditCardPaymentMethod = {
   },
 };
 
+const androidPayPaymentMethod = {  
+  supportedMethods: ['https://android.com/pay'],  
+  data: {  
+    merchantName: 'Android Pay Demo',  
+    merchantId: '00000000000000000000',  
+    environment: 'TEST',  
+    allowedCardNetworks: ['AMEX', 'DISCOVER', 'MASTERCARD', 'VISA'],  
+    paymentMethodTokenizationParameters: {  
+      tokenizationType: 'GATEWAY_TOKEN',  
+      parameters: {  
+        'gateway': 'stripe',  
+        'stripe:publishableKey': 'xx_demo_xxxxxxxxxxxxxxxxxxxxxxxx',  
+        'stripe:version': '2016-07-06',  
+      },  
+    },  
+  },  
+};
+
 const bobPayPaymentMethod = {
   supportedMethods: ["https://yanfii.github.io/test"],
   data: {
@@ -23,7 +41,7 @@ const bobPayPaymentMethod = {
 };
 
 const supportedInstruments = [
-  bobPayPaymentMethod
+   creditCardPaymentMethod, androidPayPaymentMethod, bobPayPaymentMethod
 ];
 
 function initPaymentRequest() {
