@@ -5,7 +5,13 @@
  */
 
 const creditCardPaymentMethod = {
-  supportedMethods: ['basic-card'],
+  supportedMethods: ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
+      'visa', 'mir'],
+  data: {
+    supportedNetworks: ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
+      'visa', 'mir'], 
+    supportedTypes: ['debit', 'credit', 'prepaid']
+  },
 };
 
 const bobPayPaymentMethod = {
@@ -16,19 +22,12 @@ const bobPayPaymentMethod = {
   }
 };
 
-function initPaymentRequest() {
-  let networks = ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
-      'visa', 'mir'];
-  let types = ['debit', 'credit', 'prepaid'];
-  let supportedInstruments = [{
-    supportedMethods: networks,
-  }, {
-    supportedMethods: ['basic-card'],
-    data: {supportedNetworks: networks, supportedTypes: types},
-  }, {
-    supportedMethods: ["https://https://yanfii.github.io/test"],
-  }];
+  const supportedInstruments = [
+    creditCardPaymentMethod, 
+    bobPayPaymentMethod
+    ];
 
+function initPaymentRequest() {
   let details = {
     total: {label: 'Donation', amount: {currency: 'USD', value: '55.00'}},
     displayItems: [
@@ -42,7 +41,6 @@ function initPaymentRequest() {
       },
     ],
   };
-
   return new PaymentRequest(supportedInstruments, details);
 }
 
