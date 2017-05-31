@@ -15,7 +15,7 @@ const creditCardPaymentMethod = {
 };
 
 const bobPayPaymentMethod = {
-  supportedMethods: ["bobpay"],
+  supportedMethods: ['bobpay'],
   data: {
     merchantIdentifier: "XXXX",
     bobPaySpecificField: true
