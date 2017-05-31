@@ -3,7 +3,6 @@
  *
  * @return {PaymentRequest} The PaymentRequest oject.
  */
-Link: <payment-manifest.json>; rel='payment-method-manifest"
 
 const creditCardPaymentMethod = {
   supportedMethods: ['basic-card'],
