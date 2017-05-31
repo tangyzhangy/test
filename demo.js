@@ -15,7 +15,7 @@ const creditCardPaymentMethod = {
 };
 
 const bobPayPaymentMethod = {
-  supportedMethods: ["https://yanfii.github.io/test"],
+  supportedMethods: ["bobpay"],
   data: {
     merchantIdentifier: "XXXX",
     bobPaySpecificField: true
