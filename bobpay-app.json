@@ -1,7 +1,9 @@
 {
  "related_applications" : [{
   "platform" : "play", 
-  "id" : "com. "min_version" :  "1" ,  "fingerprints" : [{
+  "id" : "com.bobpay.app",
+  min_version" : "1",
+  "fingerprints" : [{
  "play" 
   "com.bobpay.app" 
 , "type" :  "sha256_cert" ,
