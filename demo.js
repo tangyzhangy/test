@@ -22,10 +22,9 @@ const bobPayPaymentMethod = {
   }
 };
 
-  const supportedInstruments = [
-    creditCardPaymentMethod, 
-    bobPayPaymentMethod
-    ];
+const supportedInstruments = [
+
+];
 
 function initPaymentRequest() {
   let details = {
