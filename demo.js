@@ -4,7 +4,7 @@
  * @return {PaymentRequest} The PaymentRequest oject.
  */
 function initPaymentRequest() {
-  let networks = ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
+  AAAlet networks = ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
       'visa', 'mir'];
   let types = ['debit', 'credit', 'prepaid'];
   let supportedInstruments = [{
