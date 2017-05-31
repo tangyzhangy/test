@@ -5,8 +5,7 @@
  */
 
 const creditCardPaymentMethod = {
-  supportedMethods: ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
-      'visa', 'mir'],
+  supportedMethods: ['basic-card'],
   data: {
     supportedNetworks: ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
       'visa', 'mir'], 
