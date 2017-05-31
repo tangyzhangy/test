@@ -1,34 +1,32 @@
 /**
- * Builds PaymentRequest for Android Pay, but does not show any UI yet. If you
- * encounter issues when running your own copy of this sample, run 'adb logcat |
- * grep Wallet' to see detailed error messages.
+ * Builds PaymentRequest for credit cards, but does not show any UI yet.
  *
- * @return {PaymentRequest} The PaymentRequest object.
+ * @return {PaymentRequest} The PaymentRequest oject.
  */
-function initPaymentRequest() {
-  let supportedInstruments = [{
-    supportedMethods: ['https://android.com/pay'],
-    data: {
-      merchantName: 'Android Pay Demo',
-      // Place your own Android Pay merchant ID here. The merchant ID is tied to
-      // the origin of the website.
-      merchantId: '00184145120947117657',
-      // If you do not yet have a merchant ID, uncomment the following line.
-      // environment: 'TEST',
-      allowedCardNetworks: ['AMEX', 'DISCOVER', 'MASTERCARD', 'VISA'],
-      paymentMethodTokenizationParameters: {
-        tokenizationType: 'GATEWAY_TOKEN',
-        parameters: {
-          'gateway': 'stripe',
-          // Place your own Stripe publishable key here. Use a matching Stripe
-          // secret key on the server to initiate a transaction.
-          'stripe:publishableKey': 'pk_live_lNk21zqKM2BENZENh3rzCUgo',
-          'stripe:version': '2016-07-06',
-        },
-      },
-    },
-  }];
 
+const creditCardPaymentMethod = {
+  supportedMethods: ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
+      'visa', 'mir'],
+  data: {
+    supportedNetworks: ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
+      'visa', 'mir'], 
+    supportedTypes: ['debit', 'credit', 'prepaid']
+  },
+};
+
+const bobPayPaymentMethod = {
+  supportedMethods: ["https://yanfii.github.io/test"],
+  data: {
+    merchantIdentifier: "XXXX",
+    bobPaySpecificField: true
+  }
+};
+
+const supportedInstruments = [
+   creditCardPaymentMethod, bobPayPaymentMethod
+];
+
+function initPaymentRequest() {
   let details = {
     total: {label: 'Donation', amount: {currency: 'USD', value: '55.00'}},
     displayItems: [
@@ -42,12 +40,11 @@ function initPaymentRequest() {
       },
     ],
   };
-
   return new PaymentRequest(supportedInstruments, details);
 }
 
 /**
- * Invokes PaymentRequest for Android Pay.
+ * Invokes PaymentRequest for credit cards.
  *
  * @param {PaymentRequest} request The PaymentRequest object.
  */
@@ -85,18 +82,19 @@ function sendPaymentToServer(instrumentResponse) {
 /**
  * Converts the payment instrument into a JSON string.
  *
+ * @private
  * @param {PaymentResponse} instrument The instrument to convert.
  * @return {string} The JSON string representation of the instrument.
  */
 function instrumentToJsonString(instrument) {
-  if (instrument.toJSON) {
-    return JSON.stringify(instrument, undefined, 2);
-  } else {
-    return JSON.stringify({
-      methodName: instrument.methodName,
-      details: instrument.details,
-    }, undefined, 2);
-  }
+  let details = instrument.details;
+  details.cardNumber = 'XXXX-XXXX-XXXX-' + details.cardNumber.substr(12);
+  details.cardSecurityCode = '***';
+
+  return JSON.stringify({
+    methodName: instrument.methodName,
+    details: details,
+  }, undefined, 2);
 }
 
 const payButton = document.getElementById('buyButton');
