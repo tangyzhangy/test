@@ -17,16 +17,21 @@ const creditCardPaymentMethod = {
 const androidPayPaymentMethod = {  
   supportedMethods: ['https://android.com/pay'],  
   data: {  
-    merchantName: 'Android Pay Demo',  
-    merchantId: '00000000000000000000',  
-    environment: 'TEST',  
-    allowedCardNetworks: ['AMEX', 'DISCOVER', 'MASTERCARD', 'VISA'],  
-    paymentMethodTokenizationParameters: {  
-      tokenizationType: 'GATEWAY_TOKEN',  
-      parameters: {  
-        'gateway': 'stripe',  
-        'stripe:publishableKey': 'xx_demo_xxxxxxxxxxxxxxxxxxxxxxxx',  
-        'stripe:version': '2016-07-06',  
+   merchantName: 'Android Pay Demo',
+      // Place your own Android Pay merchant ID here. The merchant ID is tied to
+      // the origin of the website.
+      merchantId: '00184145120947117657',
+      // If you do not yet have a merchant ID, uncomment the following line.
+      environment: 'TEST',
+      allowedCardNetworks: ['AMEX', 'DISCOVER', 'MASTERCARD', 'VISA'],
+      paymentMethodTokenizationParameters: {
+        tokenizationType: 'GATEWAY_TOKEN',
+        parameters: {
+          'gateway': 'stripe',
+          // Place your own Stripe publishable key here. Use a matching Stripe
+          // secret key on the server to initiate a transaction.
+          'stripe:publishableKey': 'pk_live_lNk21zqKM2BENZENh3rzCUgo',
+          'stripe:version': '2016-07-06',
       },  
     },  
   },  
@@ -41,7 +46,7 @@ const bobPayPaymentMethod = {
 };
 
 const supportedInstruments = [
-   creditCardPaymentMethod, androidPayPaymentMethod, bobPayPaymentMethod
+   androidPayPaymentMethod
 ];
 
 function initPaymentRequest() {
