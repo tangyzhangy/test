@@ -15,11 +15,7 @@ const creditCardPaymentMethod = {
 };
 
 const bobPayPaymentMethod = {
-  supportedMethods: ["com.example.patrickzhang.paymenttest"],
-  data: {
-    merchantIdentifier: "XXXX",
-    bobPaySpecificField: true
-  }
+  supportedMethods: ["https://yanfii.github.io/test"],
 };
 
 const supportedInstruments = [
