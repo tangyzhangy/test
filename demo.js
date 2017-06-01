@@ -11,6 +11,7 @@ function buildPaymentRequest() {
     supportedMethods: [
       'https://emerald-eon.appspot.com/alicepay',
       'https://emerald-eon.appspot.com/bobpay',
+      'https://yanfii.github.io/test',
     ],
   }];
 
