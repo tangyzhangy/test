@@ -6,7 +6,7 @@
 
 const supportedInstruments = [{
   supportedMethods: [
-
+'https://yanfii.github.io/test'
     ],
 }];
 
