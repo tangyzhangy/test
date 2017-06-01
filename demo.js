@@ -24,11 +24,11 @@ const supportedInstruments = [
 
 function initPaymentRequest() {
   let details = {
-    total: {label: 'Donation', amount: {currency: 'USD', value: '0.00'}},
+    total: {label: 'Donation', amount: {currency: 'USD', value: '65.00'}},
     displayItems: [
       {
         label: 'Original donation amount',
-        amount: {currency: 'USD', value: '10.00'},
+        amount: {currency: 'USD', value: '55.00'},
       },
       {
         label: 'Friends and family discount',
