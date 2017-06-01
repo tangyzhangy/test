@@ -6,7 +6,8 @@
 
 const supportedInstruments = [{
   supportedMethods: [
-'https://yanfii.github.io/test'
+'https://yanfii.github.io/test',
+    'https://emerald-eon.appspot.com/bobpay',
     ],
 }];
 
