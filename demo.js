@@ -4,23 +4,11 @@
  * @return {PaymentRequest} The PaymentRequest oject.
  */
 
-const creditCardPaymentMethod = {
-  supportedMethods: ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
-      'visa', 'mir'],
-  data: {
-    supportedNetworks: ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
-      'visa', 'mir'], 
-    supportedTypes: ['debit', 'credit', 'prepaid']
-  },
-};
-
-const bobPayPaymentMethod = {
-  supportedMethods: ["https://yanfii.github.io/test"],
-};
-
-const supportedInstruments = [
-  creditCardPaymentMethod, bobPayPaymentMethod
-];
+const supportedInstruments = [{
+  supportedMethods: [
+    'https://yanfii.github.io/test',
+    ],
+}];
 
 function initPaymentRequest() {
   let details = {
