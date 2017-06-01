@@ -1,21 +1,24 @@
+---
+	feature_name: PaymentRequest Credit Cards
+	chrome_version: 53
+	feature_id: 5639348045217792
+	---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bob Pay Test</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-  <div id="contents">
-    <h1>Bob Pay Test</h1>
-    <p>This merchant accepts Bob Pay.</p>
-    <p>Price: USD <strong>$55.00</strong></p>
-    <p><button onclick="onBuyClicked()">Buy</button></p>
-  </div>
-  <pre id="msg"></pre>
-  <script src="util.js"></script>
-  <script src="demo.js"></script>
-</body>
-</html>
+
+	<h3>Background</h3>
+
+
+	<p>
+	  This sample accepts Bobpay and does not request shipping
+	  information.
+	</p>
+
+
+	{% capture initial_output_content %}
+	<div><button id="buyButton">Buy</button></div>
+	<div><pre id="result"></pre></div>
+	{% endcapture %}
+	{% include output_helper.html initial_output_content=initial_output_content %}
+
+
+	{% include js_snippet.html filename='demo.js' %}
