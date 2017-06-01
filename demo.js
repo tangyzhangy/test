@@ -10,7 +10,7 @@ function buildPaymentRequest() {
   const supportedInstruments = [{
     supportedMethods: [
       //'https://emerald-eon.appspot.com/bobpay'
-     // 'https://yanfii.github.io/test',
+     'https://yanfii.github.io/test',
     ],
   }];
 
