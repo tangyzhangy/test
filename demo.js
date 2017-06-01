@@ -5,7 +5,8 @@
  */
 
 const creditCardPaymentMethod = {
-  supportedMethods: ['basic-card'],
+  supportedMethods: ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
+      'visa', 'mir'],
   data: {
     supportedNetworks: ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
       'visa', 'mir'], 
@@ -14,7 +15,7 @@ const creditCardPaymentMethod = {
 };
 
 const bobPayPaymentMethod = {
-  supportedMethods: ['bobpay'],
+  supportedMethods: ["https://yanfii.github.io/test"],
   data: {
     merchantIdentifier: "XXXX",
     bobPaySpecificField: true
@@ -22,16 +23,16 @@ const bobPayPaymentMethod = {
 };
 
 const supportedInstruments = [
-   creditCardPaymentMethod, bobPayPaymentMethod
+  creditCardPaymentMethod, bobPayPaymentMethod
 ];
 
 function initPaymentRequest() {
   let details = {
-    total: {label: 'Donation', amount: {currency: 'USD', value: '55.00'}},
+    total: {label: 'Donation', amount: {currency: 'USD', value: '0.00'}},
     displayItems: [
       {
         label: 'Original donation amount',
-        amount: {currency: 'USD', value: '65.00'},
+        amount: {currency: 'USD', value: '10.00'},
       },
       {
         label: 'Friends and family discount',
