@@ -1,7 +1,7 @@
 {
  "related_applications" : [{
   "platform" : "play", 
-  "id" : "com.example.patrickzhang.paymenttest",
+  "id" : "com.bobpay",
   "min_version" : "1",
   "fingerprints" : [{
       "type" :  "sha256_cert" ,
