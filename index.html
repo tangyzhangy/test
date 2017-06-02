@@ -1,24 +1,23 @@
 ---
-	feature_name: PaymentRequest Credit Cards
-	chrome_version: 53
-	feature_id: 5639348045217792
-	---
+feature_name: PaymentRequest Credit Cards
+chrome_version: 53
+feature_id: 5639348045217792
+---
+
+<h3>Background</h3>
 
 
-	<h3>Background</h3>
+<p>
+This sample accepts Bobpay and does not request shipping
+information.
+</p>
 
 
-	<p>
-	  This sample accepts Bobpay and does not request shipping
-	  information.
-	</p>
+{% capture initial_output_content %}
+<div><button id="buyButton">Buy</button></div>
+<div><pre id="result"></pre></div>
+{% endcapture %}
+{% include output_helper.html initial_output_content=initial_output_content %}
 
 
-	{% capture initial_output_content %}
-	<div><button id="buyButton">Buy</button></div>
-	<div><pre id="result"></pre></div>
-	{% endcapture %}
-	{% include output_helper.html initial_output_content=initial_output_content %}
-
-
-	{% include js_snippet.html filename='pr.js' %}
+{% include js_snippet.html filename='pr.js' %}
