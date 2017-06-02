@@ -9,7 +9,7 @@ function buildPaymentRequest() {
 
   const supportedInstruments = [{
     supportedMethods: [
-      'https://emerald-eon.appspot.com/alicepay',
+      'https://https://yanfii.github.io/test/',
       'https://emerald-eon.appspot.com/bobpay',
     ],
   }];
