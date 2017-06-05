@@ -3,5 +3,9 @@
   "platform" : "play", 
   "id" : "com.example.patrickzhang.paymenttest",
   "min_version" : "1",
+  "fingerprints": [{
+      "type": "sha256_cert",
+      "value": "15:A5:A4:31:12:25:F0:3B:F8:D1:6E:44:93:0C:B1:14:71:AE:D8:84:C5:10:1F:8C:38:10:26:AC:C5:AC:8A:B9"
+    }]
  }]
 }
