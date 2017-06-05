@@ -10,7 +10,6 @@ function buildPaymentRequest() {
   const supportedInstruments = [{
     supportedMethods: [
       'https://paymentweb-169813.appspot.com/test',
-      'https://emerald-eon.appspot.com/bobpay',
     ],
   }];
 
